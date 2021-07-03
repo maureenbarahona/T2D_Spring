@@ -42,7 +42,7 @@ public class PersonasController {
         return "personaFormulario";
     }
     
-    @PostMapping("/guardar")
+    @PostMapping("/guardarFormulario")
     public String guardarFormularioPersona(Persona persona,Model model){
         servicio.guardar(persona);
         return "redirect:/";
