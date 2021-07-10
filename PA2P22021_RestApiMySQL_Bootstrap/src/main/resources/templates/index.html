@@ -9,38 +9,43 @@ and open the template in the editor.
         <title>UTH</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
     </head>
     <body>
-        <h1>Aplicacion de Personas</h1>
-        <a href="/crear">Agregar</a>
-        <h2 th:if="${lista.isEmpty()}">No hay datos de personas</h2>
-        <div th:if="${!lista.isEmpty()}">
-            <h2>Lista de Personas</h2>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Correo</th>
-                        <th>Actualizar</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="tmp:${lista}">
-                        <td th:text="${tmp.id}"></td>
-                        <td th:text="${tmp.nombre}"></td>
-                        <td th:text="${tmp.correo}"></td>
-                        <td>
-                            <a th:href="@{/actualizar/{id}(id=${tmp.id})}">actualizar</a>
-                        </td>
-                        <td>
-                            <a th:href="@{/eliminar/{id}(id=${tmp.id})}">Borrar</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="container">
+            <h1>Aplicacion de Personas</h1>
+            <a href="/crear">Agregar</a>
+            <h2 th:if="${lista.isEmpty()}">No hay datos de personas</h2>
+            <div th:if="${!lista.isEmpty()}">
+                <h2>Lista de Personas</h2>
+                <table border="1" class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Actualizar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="tmp:${lista}">
+                            <td th:text="${tmp.id}"></td>
+                            <td th:text="${tmp.nombre}"></td>
+                            <td th:text="${tmp.correo}"></td>
+                            <td>
+                                <a th:href="@{/actualizar/{id}(id=${tmp.id})}">actualizar</a>
+                            </td>
+                            <td>
+                                <a th:href="@{/eliminar/{id}(id=${tmp.id})}">Borrar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
 
         </div>
+
     </body>
 </html>
