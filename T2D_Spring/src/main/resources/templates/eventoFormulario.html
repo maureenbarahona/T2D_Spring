@@ -6,27 +6,51 @@ and open the template in the editor.
 -->
 <html xmlns:th="https://www.thymeleaf.org/">
     <head>
-        <title>UTH</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Things 2 do App</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+        <!-- Google web font "Open Sans" -->
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> <!-- Font Awesome -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css"> <!-- Bootstrap style -->
+        <link rel="stylesheet" type="text/css" href="./slick/slick.css" />
+        <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css" />
+        <link rel="stylesheet" type="text/css" href="./css/datepicker.css" />
+        <link rel="stylesheet" href="./css/tooplate-style.css"> <!-- Templatemo style -->
+
+        <script type="text/javascript" src="./js/validaciones.js"></script> 
+
     </head>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="container">
+
+                <a href="#" class="navbar-brand">
+                    <img src="img/T2DSM-01.png" alt="logo" width="150">
+                </a>
+            </div>
+        </nav>
+    </header>
     <body>
         <div class="container">
-            <h1>Formulario Eventos</h1>
+            <h1>Registro de Evento</h1>
+            <br>
+            <br>
             <form action="#" method="POST" th:action="@{/guardarFormulario}" th:object="${evento}">
-                Id:<input type="text" id="id" name="id" th:field="*{id}" class="form-control"><br>
-                Nombre:<input type="text" id="nombre" name="nombre" th:field="*{nombre}" class="form-control"> <br>
-                Correo:<input type="text" id="correo" name="correo" th:field="*{correo}" class="form-control"><br>
-                Pais:<input type="text" id="codPais" name="codPais" th:field="*{codPais}" class="form-control"><br>
-                Ciudad:<input type="text" id="codCiudad" name="codCiudad" th:field="*{codCiudad}" class="form-control"><br>
-                Descripcion:<input type="text" id="descripcion" name="descripcion" th:field="*{descripcion}" class="form-control"><br>
-                Fecha Inicial:<input type="date" id="fecInicial" name="fecInicial" th:field="*{fecInicial}" placeholder="dd-mm-yyyy" class="form-control"><br>
-                Fecha Final:<input type="date" id="fecFinal" name="fecFinal" th:field="*{fecFinal}" placeholder="dd-mm-yyyy" class="form-control"><br> 
-                Precio:<input type="text" id="precio" name="precio" th:field="*{precio}" class="form-control"><br>
-                WebSite:<input type="text" id="urlEvento" name="urlEvento" th:field="*{urlEvento}" class="form-control"><br>
-                WebSite:<input type="text" id="imgAfiche" name="imgAfiche" th:field="*{imgAfiche}" class="form-control"><br>
-                <button type="submit" class="btn btn-success">Guardar Evento</button>
+
+                Nombre:<input type="text" id="nombre" name="nombre" th:field="*{nombre}" class="form-control bg-white border-left-0 border-md"> <br>
+                Correo:<input type="text" id="correo" name="correo" th:field="*{correo}" class="form-control bg-white border-left-0 border-md"><br>
+                Pais:<input type="text" id="codPais" name="codPais" th:field="*{codPais}" class="form-control bg-white border-left-0 border-md"><br>
+                Ciudad:<input type="text" id="codCiudad" name="codCiudad" th:field="*{codCiudad}" class="form-control bg-white border-left-0 border-md"><br>
+                Descripcion:<input type="text" id="descripcion" name="descripcion" th:field="*{descripcion}" class="form-control bg-white border-left-0 border-md"><br>
+                Fecha Inicial:<input type="date" id="fecInicial" name="fecInicial" th:field="*{fecInicial}" placeholder="dd-mm-yyyy" class="form-control bg-white border-left-0 border-md"><br>
+                Fecha Final:<input type="date" id="fecFinal" name="fecFinal" th:field="*{fecFinal}" placeholder="dd-mm-yyyy" class="form-control bg-white border-left-0 border-md"><br> 
+                Precio:<input type="text" id="precio" name="precio" th:field="*{precio}" class="form-control bg-white border-left-0 border-md"><br>
+                WebSite:<input type="text" id="urlEvento" name="urlEvento" th:field="*{urlEvento}" class="form-control bg-white border-left-0 border-md"><br>
+                WebSite:<input type="text" id="imgAfiche" name="imgAfiche" th:field="*{imgAfiche}" class="form-control bg-white border-left-0 border-md"><br>
+                <button type="submit" class="btn btn-primary tm-btn-search">Guardar Evento</button>
             </form>
         </div>
 
