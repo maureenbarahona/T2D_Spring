@@ -5,8 +5,8 @@
  */
 package hn.uth.pa2.app.controloradores;
 
-import hn.uth.pa2.app.modelos.Pais;
-import hn.uth.pa2.app.servicios.PaisService;
+import hn.uth.pa2.app.modelos.Usuario;
+import hn.uth.pa2.app.servicios.UsuarioService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,31 +19,37 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author avarela
+ * @author mbarahona
  */
 @RestController
-@RequestMapping("/ws/paises/")
-public class PaisRestController {
+@RequestMapping("/ws/usuarios/")
+public class UsuarioRestController {
     @Autowired
-    private PaisService servicio;
+    private UsuarioService servicio;
     
     @GetMapping("/")
-    public List<Pais> getListaPais(){
+    public List<Usuario> getListaUsuario(){
         return servicio.getLista();
     }
     
     @GetMapping("/{id}")
-    public Optional<Pais> getPaisById(@PathVariable Long id){
+    public Optional<Usuario> getUsuarioById(@PathVariable Long id){
         return servicio.getEntidad(id);
     }
-    
-    @PostMapping("/guardarPais")
-    public String guardar(@RequestBody Pais pais){
-        servicio.guardar(pais);
+  /*  
+    @PostMapping("/login")
+    public String validaL(@PathVariable String email, String password){
+    servicio.getUsuario(email, password);
+    return "login exitoso";
+    }
+   */ 
+    @PostMapping("/guardarUsuario")
+    public String guardar(@RequestBody Usuario usuario){
+        servicio.guardar(usuario);
         return "elemento guardado";
     }
     
-    @GetMapping("/eliminarPais/{id}")
+    @GetMapping("/eliminarUsuario/{id}")
     public String eliminar(@PathVariable Long id){
         servicio.eliminar(id);
         return "elemento eliminado";

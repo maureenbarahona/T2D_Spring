@@ -1,18 +1,18 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 16 jul. 2021, 16:07:19
-    Author     : maureen
-*/
+
 
 body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 13px;
 	font-weight: 400;
 	overflow-x: hidden;
+}
+
+.ocultar {
+    display: none;
+}
+ 
+.mostrar {
+    display: block;
 }
 
 a, button {
@@ -254,6 +254,24 @@ p {
 .form-control:focus {
 	border-color: #ee5057;
 	box-shadow: 0 0 0 0.2rem rgba(238, 80, 87, .25);
+}
+
+.btn-facebook {
+    background: #405D9D;
+    border: none;
+}
+
+.btn-facebook:hover, .btn-facebook:focus {
+    background: #314879;
+}
+
+.btn-twitter {
+    background: #42AEEC;
+    border: none;
+}
+
+.btn-twitter:hover, .btn-twitter:focus {
+    background: #1799e4;
 }
 
 .btn-primary {

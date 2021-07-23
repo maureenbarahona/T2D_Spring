@@ -6,6 +6,7 @@
 package hn.uth.pa2.app.repositorios;
 
 import hn.uth.pa2.app.modelos.Evento;
+import java.time.LocalDate;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -13,5 +14,7 @@ import org.springframework.data.repository.CrudRepository;
  * @author avarela
  */
 public interface EventoRepositorio extends CrudRepository<Evento, Long> {
+    public Evento findByCodPais(String codPais  );
+    public Evento findByCodPaisAndFecInicialAndFecFinal(String codPais, LocalDate fecIncial, LocalDate fecFinal  );
     
 }

@@ -21,37 +21,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class EventoController {
+
     @Autowired
     private EventoService servicio;
-    
+
     @RequestMapping("/")
-    public String index(Model model){
+    public String index(Model model) {
         model.addAttribute("lista", servicio.getLista());
         return "index";
     }
-    
+
     @GetMapping("/crear")
-    public String abrirFormularioCrearEvento(Model model){
+    public String abrirFormularioCrearEvento(Model model) {
         model.addAttribute("evento", new Evento());
         return "eventoFormulario";
     }
-    
+
+ 
+
     @GetMapping("/actualizar/{id}")
-    public String abrirFormularioActualizarEvento(@PathVariable Long id,Model model){
+    public String abrirFormularioActualizarEvento(@PathVariable Long id, Model model) {
         model.addAttribute("evento", servicio.getEntidad(id));
         return "eventoFormulario";
     }
-    
+
     @PostMapping("/guardarFormulario")
-    public String guardarFormularioEvento(Evento evento,Model model){
+    public String guardarFormularioEvento(Evento evento, Model model) {
         servicio.guardar(evento);
         return "redirect:/";
     }
-    
+
     @GetMapping("/eliminar/{id}")
-    public String eliminarEvento(@PathVariable Long id,Model model){
+    public String eliminarEvento(@PathVariable Long id, Model model) {
         servicio.eliminar(id);
         return "redirect:/";
     }
-    
+
 }

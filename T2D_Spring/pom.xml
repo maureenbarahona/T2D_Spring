@@ -12,7 +12,7 @@
     <artifactId>T2D_Spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>T2D_Spring</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Things2Do</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -37,8 +37,18 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.21</version>
         </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
 
     </dependencies>
 
